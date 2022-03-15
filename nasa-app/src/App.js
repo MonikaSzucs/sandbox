@@ -17,7 +17,13 @@ function App() {
     axios.get(url)
       .then((response) => {setData(response.data)
       console.log(response.data)
+      console.log(response.data.length())
+        console.log(event)
 
+      for(let val in response.data){
+        console.log(val, response.data[val]);
+      }
+      
       let contentInfo = {
         "date": response.data.date, 
         "explanation": response.data.explanation,
@@ -25,6 +31,8 @@ function App() {
         "title": response.data.title,
         "url": response.data.url
       }
+
+
       console.log(contentInfo)
       .catch(error => {
         alert(error)
