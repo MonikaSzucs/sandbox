@@ -14,7 +14,7 @@ export default function SingleEvent() {
     };
 
     useEffect(() => {
-        console.log("outside")
+        console.log("useEffect on Home Page")
         getGiHubUserWithAxios();
     },[])
 
