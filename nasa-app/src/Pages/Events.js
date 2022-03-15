@@ -33,9 +33,18 @@ export default function Events() {
                             <p>{event.link}</p>
                             <p>{event.categories[0].title}</p> 
                             <p>{event.sources[0].id}</p>
-                            {event.sources?.map((subItems, sIndex) => {
-                                return <li key={sIndex}> {subItems.url} </li>;
-                            })} 
+                            <div>{event.sources?.map((sourceItems, sIndex) => {
+                                return <div key={sIndex}><a  href={sourceItems.url} download>Click to download</a></div>
+                            })}</div>
+                            <div>{event.geometries?.map((geoItems, gIndex) => {
+                                return (
+                                    <div key={gIndex}>
+                                        <span>{geoItems.date}</span>
+                                        <div>{geoItems.coordinates[0]}</div>
+                                        <div>{geoItems.coordinates[1]}</div>
+                                    </div>
+                                    )
+                            })}</div>
                         </div>
                     )
                 })
