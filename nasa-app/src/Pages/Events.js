@@ -32,7 +32,10 @@ export default function Events() {
                             <h2>{event.title}</h2>
                             <p>{event.link}</p>
                             <p>{event.categories[0].title}</p> 
-                            <p>{event.sources[0].id}</p> 
+                            <p>{event.sources[0].id}</p>
+                            {event.sources?.map((subItems, sIndex) => {
+                                return <li key={sIndex}> {subItems.url} </li>;
+                            })} 
                         </div>
                     )
                 })
